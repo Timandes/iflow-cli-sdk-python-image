@@ -19,5 +19,8 @@ RUN apt-get update && \
 RUN groupadd -r iflow && useradd -r -m -g iflow iflow
 USER iflow:iflow
 
+ENV PATH=/home/iflow/.npm-global/bin:$PATH
+ENV NPM_CONFIG_PREFIX=/home/iflow/.npm-global
+
 RUN npm i -g @iflow-ai/iflow-cli@${IFLOW_CLI_VERSION}
 
