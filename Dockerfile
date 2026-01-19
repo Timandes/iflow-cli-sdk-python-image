@@ -16,7 +16,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* && \
     apt-get clean
 
-RUN groupadd -r iflow && useradd -r -g iflow iflow
+RUN groupadd -r iflow && useradd -r -m -g iflow iflow
 USER iflow:iflow
 
 RUN npm i -g @iflow-ai/iflow-cli@${IFLOW_CLI_VERSION}
